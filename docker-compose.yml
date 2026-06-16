@@ -1,0 +1,20 @@
+version: "3"
+services:
+  cons-front-end:
+    container_name: cons-front-end
+    ports:
+      - 5173:80 # Port BE khai báo : Port ngnix mặc định
+    build: ./frontend # Tìm đến nơi đang có docker file
+
+  cons-back-end:
+    container_name: cons-back-end
+    ports:
+      - 8800:8800
+    build: ./API # Tìm đến nơi đang có docker file
+    networks: # khai báo network để backend kết nối
+      - demo_network
+
+# Khai báo network đã có sẵn không cần tạo mới
+networks:
+  demo_network:
+    external: true
