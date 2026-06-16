@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
   );
 
   useEffect(() => {
@@ -82,13 +82,11 @@ const Navbar = () => {
             className="btn btn-ghost text-xl"
             style={{ textDecoration: "none" }}
           >
-            MyDevify
+            DevOps 03
           </Link>
-          <Link
-            to="/">
-
-          <HomeIcon />
-            </Link>
+          <Link to="/">
+            <HomeIcon />
+          </Link>
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
@@ -155,27 +153,20 @@ const Navbar = () => {
               className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
               <li>
-              <NavLink
-                  to={`/profile/${currentUser.id}`}
-                  
-                >
-                <a className="justify-between">
-                  Profile
-                  {/* <span className="badge">New</span> */}
-                </a>
-                  </NavLink>
+                <NavLink to={`/profile/${currentUser.id}`}>
+                  <a className="justify-between">
+                    Profile
+                    {/* <span className="badge">New</span> */}
+                  </a>
+                </NavLink>
               </li>
               <li>
-              <NavLink
-                  to={`/profile/${currentUser.id}`}
-                  
-                >
-                <a className="justify-between">
-                Settings
-                  {/* <span className="badge">New</span> */}
-                </a>
-                  </NavLink>
-                
+                <NavLink to={`/profile/${currentUser.id}`}>
+                  <a className="justify-between">
+                    Settings
+                    {/* <span className="badge">New</span> */}
+                  </a>
+                </NavLink>
               </li>
               <li>
                 <a onClick={handleLogout}>Logout</a>
